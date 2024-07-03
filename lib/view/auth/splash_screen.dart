@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
         await determinePosition();
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) {
-            return BottomNav();
+            return const BottomNav();
           },
         ));
       } else {
@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -70,13 +70,13 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 100,
             ),
             Padding(
-              padding: EdgeInsets.all(15.0),
-              child: new LinearPercentIndicator(
+              padding: const EdgeInsets.all(15.0),
+              child: LinearPercentIndicator(
                 alignment: MainAxisAlignment.center,
                 width: screenWidth(context) - 150,
                 animation: true,
                 lineHeight: 6.0,
-                barRadius: Radius.circular(5),
+                barRadius: const Radius.circular(5),
                 animationDuration: 2000,
                 percent: 1,
                 progressColor: white,
@@ -91,7 +91,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           color: white, size: 20),
                       sizedwten(context),
                       Text(
-                        'Checking Network',
+                        'Checking for Network',
                         style: TextStyle(color: white),
                       )
                     ],

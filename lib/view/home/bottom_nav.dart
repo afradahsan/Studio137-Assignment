@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:studio137_deliva/utils/utils.dart';
 import 'package:studio137_deliva/view/home/coupons.dart';
 import 'package:studio137_deliva/view/home/emergency_services.dart';
 import 'package:studio137_deliva/view/home/messages_page.dart';

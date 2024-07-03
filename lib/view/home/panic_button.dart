@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:studio137_deliva/controller/auth_controller.dart';
+import 'package:studio137_deliva/utils/utils.dart';
 
 class PanicButton extends StatelessWidget {
   const PanicButton({super.key});
@@ -12,7 +13,14 @@ class PanicButton extends StatelessWidget {
               onPressed: () {
                 AuthController().logout(context);
               },
-              child: Text('log out'))),
+              style: const ButtonStyle(
+                  maximumSize: WidgetStatePropertyAll(Size(250, 80)),
+                  backgroundColor:
+                      WidgetStatePropertyAll(Color.fromRGBO(231, 76, 61, 1))),
+              child: Text(
+                'Log out',
+                style: TextStyle(color: white),
+              ))),
     );
   }
 }

@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:studio137_deliva/controller/auth_controller.dart';
 import 'package:studio137_deliva/utils/utils.dart';
 import 'package:studio137_deliva/view/auth/login_page.dart';
+import 'package:studio137_deliva/view/auth/widgets/signup_button.dart';
+import 'package:studio137_deliva/view/auth/widgets/text_formfeild.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -34,7 +36,7 @@ class _SignupPageState extends State<SignupPage> {
   void handletap() {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {
-        return LoginPage();
+        return const LoginPage();
       },
     ));
   }
@@ -48,37 +50,31 @@ class _SignupPageState extends State<SignupPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'REGISTER FOR FREE',
+            const Text(
+              'REGISTER NOW!',
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 24),
             ),
             sizedten(context),
-            TextFormField(
-              decoration: InputDecoration(
-                  labelText: 'Full Name',
-                  border: OutlineInputBorder(borderSide: BorderSide(width: 1))),
+            TFormFeild(
               controller: usernameController,
+              label: 'Full Name',
             ),
             sizedten(context),
-            TextFormField(
-              decoration: InputDecoration(
-                  labelText: 'Email Address',
-                  border: OutlineInputBorder(borderSide: BorderSide(width: 1))),
+            TFormFeild(
               controller: emailController,
+              label: 'Email Adress',
             ),
             sizedten(context),
-            TextFormField(
-              decoration: InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(borderSide: BorderSide(width: 1))),
+            TFormFeild(
               controller: passwordController,
+              label: 'Password',
             ),
             sizedtwenty(context),
-            ElevatedButton(
-              onPressed: () {
+            SignupButton(
+              onpressed: () {
                 if (usernameController.text != null &&
                     emailController.text != null &&
                     passwordController.text != null) {
@@ -89,25 +85,7 @@ class _SignupPageState extends State<SignupPage> {
                       context);
                 }
               },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'REGISTER',
-                    style: TextStyle(color: white, fontWeight: FontWeight.w500),
-                  ),
-                  sizedwten(context),
-                  Icon(
-                    Icons.arrow_forward_rounded,
-                    color: white,
-                    size: 20,
-                  )
-                ],
-              ),
-              style: ButtonStyle(
-                  maximumSize: WidgetStatePropertyAll(Size(250, 80)),
-                  backgroundColor:
-                      WidgetStatePropertyAll(Color.fromRGBO(231, 76, 61, 1))),
+              buttonText: 'REGISTER',
             ),
             sizedten(context),
             RichText(

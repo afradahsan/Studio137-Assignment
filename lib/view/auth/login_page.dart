@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:studio137_deliva/controller/auth_controller.dart';
 import 'package:studio137_deliva/utils/utils.dart';
 import 'package:studio137_deliva/view/auth/signup_page.dart';
+import 'package:studio137_deliva/view/auth/widgets/signup_button.dart';
+import 'package:studio137_deliva/view/auth/widgets/text_formfeild.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -33,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
   void handletap() {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {
-        return SignupPage();
+        return const SignupPage();
       },
     ));
   }
@@ -47,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Log in to Continue',
               style: TextStyle(
                   color: Colors.black,
@@ -55,51 +57,29 @@ class _LoginPageState extends State<LoginPage> {
                   fontSize: 24),
             ),
             sizedten(context),
-            TextFormField(
-              decoration: InputDecoration(
-                  labelText: 'Email Address',
-                  border: OutlineInputBorder(borderSide: BorderSide(width: 1))),
+            TFormFeild(
               controller: emailController,
+              label: 'Email ID',
             ),
             sizedten(context),
-            TextFormField(
-              decoration: InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(borderSide: BorderSide(width: 1))),
+            TFormFeild(
               controller: passwordController,
+              label: 'Password',
             ),
             sizedtwenty(context),
-            ElevatedButton(
-              onPressed: () {
+            SignupButton(
+              onpressed: () {
                 if (emailController.text != null &&
                     passwordController.text != null) {
                   AuthController().login(
                       emailController.text, passwordController.text, context);
                 }
               },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Log In',
-                    style: TextStyle(color: white, fontWeight: FontWeight.w500),
-                  ),
-                  sizedwten(context),
-                  Icon(
-                    Icons.arrow_forward_rounded,
-                    color: white,
-                    size: 20,
-                  )
-                ],
-              ),
-              style: ButtonStyle(
-                  maximumSize: WidgetStatePropertyAll(Size(250, 80)),
-                  backgroundColor:
-                      WidgetStatePropertyAll(Color.fromRGBO(231, 76, 61, 1))),
+              buttonText: 'Log In',
             ),
             TextButton(
                 onPressed: () {},
-                child: Text('Forgot Password?',
+                child: const Text('Forgot Password?',
                     style: TextStyle(decoration: TextDecoration.underline))),
             RichText(
                 text: TextSpan(
