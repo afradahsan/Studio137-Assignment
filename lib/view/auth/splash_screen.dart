@@ -34,8 +34,8 @@ class _SplashScreenState extends State<SplashScreen> {
         setState(() {
           checkPermissions = true;
         });
-        checkUserConnection();
-        await determinePosition();
+        checkUserConnection(context);
+        await determinePosition(context);
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) {
             return const BottomNav();

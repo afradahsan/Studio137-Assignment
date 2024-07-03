@@ -2,8 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:studio137_deliva/utils/utils.dart';
 
-Future<bool> checkUserConnection() async {
+Future<bool> checkUserConnection(BuildContext context) async {
   try {
     final result = await InternetAddress.lookup('google.com');
     if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
@@ -12,12 +13,14 @@ Future<bool> checkUserConnection() async {
     }
   } on SocketException catch (_) {
     debugPrint('no net');
+    ScaffoldMessenger.of(context)
+        .showSnackBar(snackbar('Please check your network connnection!'));
     return false;
   }
   return false;
 }
 
-Future<Position> determinePosition() async {
+Future<Position> determinePosition(BuildContext context) async {
   bool serviceEnabled;
   LocationPermission permission;
 
@@ -33,11 +36,15 @@ Future<Position> determinePosition() async {
   if (permission == LocationPermission.denied) {
     permission = await Geolocator.requestPermission();
     if (permission == LocationPermission.denied) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(snackbar('Location permissions are denied!'));
       return Future.error('Location permissions are denied');
     }
   }
 
   if (permission == LocationPermission.deniedForever) {
+    ScaffoldMessenger.of(context).showSnackBar(snackbar(
+        'Location permissions are permanently denied, we cannot request permissions.'));
     return Future.error(
         'Location permissions are permanently denied, we cannot request permissions.');
   }

@@ -45,3 +45,13 @@ double screenHeight(BuildContext context) {
 }
 
 Color white = Colors.white;
+
+SnackBar snackbar(String snacktext) {
+  return SnackBar(
+    content: Text(snacktext),
+    backgroundColor: Colors.red,
+    elevation: 10,
+    behavior: SnackBarBehavior.floating,
+    margin: EdgeInsets.all(5),
+  );
+}
