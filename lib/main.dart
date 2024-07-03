@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:studio137_deliva/controller/auth_controller.dart';
 import 'package:studio137_deliva/firebase_options.dart';
-import 'package:studio137_deliva/view/auth/signup_page.dart';
 import 'package:studio137_deliva/view/auth/splash_screen.dart';
 
 void main() async {
@@ -23,6 +22,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
+            primarySwatch: Colors.blue,
             fontFamily: GoogleFonts.poppins().fontFamily,
           ),
           debugShowCheckedModeBanner: false,

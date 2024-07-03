@@ -3,12 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:provider/provider.dart';
 import 'package:studio137_deliva/controller/auth_controller.dart';
 import 'package:studio137_deliva/controller/permission_controller.dart';
 import 'package:studio137_deliva/utils/utils.dart';
 import 'package:studio137_deliva/view/auth/signup_page.dart';
-import 'package:studio137_deliva/view/home/coupons.dart';
+import 'package:studio137_deliva/view/home/bottom_nav.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -39,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
         await determinePosition();
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) {
-            return Coupons();
+            return BottomNav();
           },
         ));
       } else {

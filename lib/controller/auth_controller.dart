@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:studio137_deliva/model/user_model.dart';
 import 'package:studio137_deliva/view/auth/login_page.dart';
+import 'package:studio137_deliva/view/home/bottom_nav.dart';
 import 'package:studio137_deliva/view/home/coupons.dart';
 
 class AuthController extends ChangeNotifier {
@@ -25,7 +26,7 @@ class AuthController extends ChangeNotifier {
 
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) {
-          return Coupons();
+          return BottomNav();
         },
       ));
 
@@ -45,7 +46,7 @@ class AuthController extends ChangeNotifier {
           uid: userCredential.user!.uid, email: userCredential.user!.email);
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) {
-          return Coupons();
+          return BottomNav();
         },
       ));
 
