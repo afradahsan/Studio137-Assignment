@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "448012670620",
+    "project_id": "studio137-d53e8",
+    "storage_bucket": "studio137-d53e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448012670620:android:34ee878feebec3095fbf59",
+        "android_client_info": {
+          "package_name": "com.example.studio137_deliva"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjyv8DzUQZxb1f0lYg508PgpshvTXJaQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
